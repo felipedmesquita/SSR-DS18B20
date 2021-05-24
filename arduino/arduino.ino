@@ -1,8 +1,8 @@
 // Controle de um SSR no nivel de semiperiodos para uma rede 60Hz
+//https://github.com/felipedmesquita/SSR-DS18B20
 #include "auth.h"
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
-
 #include <OneWire.h>
 #include <DallasTemperature.h>
 

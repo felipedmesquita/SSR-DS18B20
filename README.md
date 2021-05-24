@@ -25,3 +25,7 @@ Comunicação por TCP para controle do rele e leitura da temperatura por uma vi.
  char ssid[] = "Vivo Fibra 208";
  char pass[] = "senhadawifi";
 ```
+
+## Próximas tarefas
+- Implementar TCP/IP com labview
+- Salvar os dados permanentemente na memória flash do ESP32
