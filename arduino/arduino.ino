@@ -1,7 +1,7 @@
 // Controle de um SSR no nivel de semiperiodos para uma rede 60Hz
 // Referencia timer ESP32:
 // https://diyprojects.io/esp32-timers-alarms-interrupts-arduino-code/
-
+#include "auth.h"
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
 
@@ -19,10 +19,6 @@ DallasTemperature sensors(&oneWire);
 
 //Para diferenciar do timer interno que eu chamei de "timer"
 BlynkTimer blynktimer;
-
-char auth[] = "mK5J2btQs5SMhPvCtHWChGEKviEUWyLK";
-char ssid[] = "D'Avila Mesquita";
-char pass[] = "peroladiamante";
 
 // Controle do SSR:
 volatile int count = 0, semiperiodos = 1, ciclo = 120, total;
