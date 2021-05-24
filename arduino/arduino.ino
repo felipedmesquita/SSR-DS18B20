@@ -1,6 +1,4 @@
 // Controle de um SSR no nivel de semiperiodos para uma rede 60Hz
-// Referencia timer ESP32:
-// https://diyprojects.io/esp32-timers-alarms-interrupts-arduino-code/
 #include "auth.h"
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
