@@ -13,14 +13,14 @@
 
 OneWire oneWire(temp_pin);
 DallasTemperature sensors(&oneWire);
-
-DeviceAddress sensor1 = { 0x28, 0x60, 0x1C, 0x79, 0xA2, 0x0, 0x3, 0xE0}; //ROM = 28 60 1C 79 A2 0 3 E0
+//Pode-se ler um sensor especifico por um identificador sensors.getTempC(sensor1)
+//DeviceAddress sensor1 = { 0x28, 0x60, 0x1C, 0x79, 0xA2, 0x0, 0x3, 0xE0}; //ROM = 28 60 1C 79 A2 0 3 E0
 
 
 //Para diferenciar do timer interno que eu chamei de "timer"
 BlynkTimer blynktimer;
 
-char auth[] = "sRLvg0_6tajytgTsB0oU-WCkTER6BNhH";
+char auth[] = "mK5J2btQs5SMhPvCtHWChGEKviEUWyLK";
 char ssid[] = "D'Avila Mesquita";
 char pass[] = "peroladiamante";
 
@@ -45,10 +45,9 @@ void ICACHE_RAM_ATTR isr() {
 
 void cadaSegundo() {
   //sensors.getTempC apenas le o ultimo valor de temperatura, sem atualizar
-  Blynk.virtualWrite(V1, sensors.getTempC(sensor1));
+  Blynk.virtualWrite(V1, sensors.getTempCByIndex(0));
   Blynk.virtualWrite(V3, semiperiodos);
-  Blynk.virtualWrite(V4, digitalRead(rele_pin));
-  //pede que o sensores calculem novos valores de temperatura:
+  //pede que o sensores calculem novos valores atualizados de temperatura:
   sensors.requestTemperatures();
 }
 
