@@ -6,7 +6,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-#define rele_pin 13
+#define rele_pin 2
 #define temp_pin 15
 
 OneWire oneWire(temp_pin);
@@ -51,7 +51,7 @@ BLYNK_WRITE(V8) {
 
 
 void setup() {
-  pinMode(temp_pin, INPUT);
+  pinMode(temp_pin, INPUT_PULLUP);
   pinMode(rele_pin, OUTPUT);
   digitalWrite(rele_pin, HIGH);
 
